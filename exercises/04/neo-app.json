@@ -1,0 +1,12 @@
+{
+	"authenticationMethod":"none",
+	"routes": [
+		{
+			"path": "/shopinfo",
+			"target": {
+				"type": "destination",
+				"name": "shopinfo"
+			}
+		}
+	]
+}

@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "06807570-ba1c-499f-9fc9-098091bee7a9",
+		"name": "Workflow Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create new \"orderprocess\" workflow instance",
+			"item": [
+				{
+					"name": "Create new workflow instance",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"definitionId\": \"orderprocess\",\n    \"context\": {\n        \"request\": {\n            \"Id\": \"HT-1003\",\n            \"Quantity\": 25\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "{{endpoints.workflow_rest_url}}/v1/workflow-instances",
+							"host": [
+								"{{endpoints.workflow_rest_url}}"
+							],
+							"path": [
+								"v1",
+								"workflow-instances"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Create a new instance of the \"orderprocess\" workflow.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1ea9cf90-d012-460e-bae4-f2fd298f040c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "15584ec1-5cec-441e-8f70-fe2e626e6667",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

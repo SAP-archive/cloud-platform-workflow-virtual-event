@@ -1,0 +1,9 @@
+{
+"routes": [
+	{
+		"source": "/",
+		"target": "/",
+		"destination": "shopinfo"
+	}
+]
+}

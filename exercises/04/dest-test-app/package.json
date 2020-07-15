@@ -1,0 +1,11 @@
+{
+  "name": "my-dest-test",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node node_modules/@sap/approuter/approuter.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@sap/approuter": "^5.3.0"
+  }
+}
