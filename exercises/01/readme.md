@@ -22,11 +22,11 @@ Finally, you'll be wearing different hats throughout this Virtual Event, using y
 - Workflow Participant
 - Workflow Viewer
 
-This exercise helps you get started with setting things up.
+This exercise helps you get started with setting things up, with the aid of an SAP Cloud Platform booster.
 
 ## Steps
 
-After completing the steps in this exercise you'll have appropriate roles set up and assigned to your user, an IDE setup and configured to work with Workflow artifacts, and an instance of the main Workflow service set up explicitly, along side instances of some other related services. Instances of the Authorization & Trust Management and HTML5 Application Repository services mentioned earlier will be set up implicitly in the next exercise.
+After completing the steps in this exercise you'll have appropriate roles set up and assigned to your user, an IDE set up and configured to work with Workflow artifacts, and an instance of the main Workflow service set up explicitly, along side instances of some other related services. Instances of the Authorization & Trust Management and HTML5 Application Repository services mentioned earlier will be set up implicitly in the next exercise.
 
 ### 1. Log on to the SAP Cloud Platform Cockpit and look around
 
