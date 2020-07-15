@@ -21,9 +21,19 @@ function deleteService () {
   cf ds -f ${target}
 }
 
+
+# MAIN
+
+# First, show the user the cf and sapcp targets and get them to confirm
+cf target && sapcp
+read -p "Proceed with reset (y/n)? " yn
+[[ ! "$yn" =~ ^(y|Y)$ ]] && exit 0
+
+# Delete - apps
 deleteApp BPMFLP
 deleteApp BPMServicesFLP_appRouter
 
+# Delete - service instances
 read -r -d '' instances <<EOF
 BPMServicesFLP_html5_repo_runtime
 default_connectivity
@@ -37,5 +47,7 @@ for instance in ${instances}; do
   deleteService ${instance}
 done
 
+# Delete - role collection
+sapcp delete security/role-collection BPMServices
 
 
