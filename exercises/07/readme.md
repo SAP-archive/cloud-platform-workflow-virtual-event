@@ -19,7 +19,7 @@ The API call you made in a previous exercise has been encapsulated into a small 
 
 ![import collection](import-collection.png)
 
-:point_right: In the dialog, specify the URL to this [workflowcollection.json](https://raw.githubusercontent.com/qmacro/cloud-platform-workflow-virtual-pilot/master/exercises/07/workflowcollection.json) resource, and use the "Import" button to complete the process.
+:point_right: In the dialog, specify the URL to this [workflowcollection.json](https://raw.githubusercontent.com/SAP-samples/cloud-platform-workflow-virtual-event/master/exercises/07/workflowcollection.json) resource, and use the "Import" button to complete the process.
 
 ### 2. Create a new Postman environment
 

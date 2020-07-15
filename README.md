@@ -1,16 +1,14 @@
-# Virtual Event Pilot - SAP Cloud Platform Workflow
+# Virtual Event - SAP Cloud Platform Workflow
 
 ## Description
 
-This repository contains the material for the virtual event pilot on SAP Cloud Platform Workflow. It is based upon the original [CodeJam - SAP Cloud Platform Workflow](https://github.com/SAP-samples/cloud-workflow-codejam/) content.
+This repository contains the material for the virtual event on SAP Cloud Platform Workflow. It is based upon the original [CodeJam - SAP Cloud Platform Workflow](https://github.com/SAP-samples/cloud-workflow-codejam/) content.
 
-Prerequisites and recommendations for this virtual event pilot are documented in the [prerequisites](prerequisites.md) file.
+Prerequisites and recommendations for this virtual event are documented in the [prerequisites](prerequisites.md) file.
 
-### Virtual pilot overview
+### Virtual event overview
 
-This SAP Cloud Platform Workflow virtual event pilot is a _reduced version_ of content for a larger virtual event which brings together, over a series of ten exercises, a number of SAP Cloud Platform topics, centred around the SAP Cloud Platform Workflow service, but also covers setting up the SAP Cloud Connector to establish connectivity to an on-prem environment, using the SAP Cloud Platform Portal service to create an SAP Fiori launchpad site, exploring the SAP API Business Hub and using the Workflow API directly. From the Workflow service perspective you'll create, deploy and extend a workflow definition, interact with tasks in the standard My Inbox app and monitor & inspect workflow instances, initiating them from the monitor itself and from a 3rd party application.
-
-_In this reduced version, which will be run over two 2-hour sessions, exercises 1, 2, 3 and 4 will be covered, focusing on setting up of the tools & services in SAP Cloud Platform Cloud Foundry environment, establishing and configuring an SAP Cloud Connector, and creating and testing a destination that utilizes that Cloud Connector, via a simple app that requests data from an OData service._
+This SAP Cloud Platform Workflow virtual event brings together, over a series of ten exercises, a number of SAP Cloud Platform topics, centred around the SAP Cloud Platform Workflow service, but also covers setting up the SAP Cloud Connector to establish connectivity to an on-prem environment, using the SAP Cloud Platform Portal service to create an SAP Fiori launchpad site, exploring the SAP API Business Hub and using the Workflow API directly. From the Workflow service perspective you'll create, deploy and extend a workflow definition, interact with tasks in the standard My Inbox app and monitor & inspect workflow instances, initiating them from the monitor itself and from a 3rd party application.
 
 ### Material organization
 
@@ -24,7 +22,7 @@ If you finish an exercise early, please resist the temptation to continue with t
 
 :point_right: Where there's an action for you to perform, it will be prefixed with this pointing symbol, to help you focus on where you are in each exercise.
 
-> Currently the management tools in SAP Cloud Platform are undergoing renovation, and there is now the concept of tool "[feature sets](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/caf4e4e23aef4666ad8f125af393dfb2.html)". Throughout this virtual event, the descriptions and screenshots will be from a "Feature Set B" environment.
+> The management tools in SAP Cloud Platform have recently undergone renovation, and there is now the concept of tool "[feature sets](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/caf4e4e23aef4666ad8f125af393dfb2.html)". Throughout this virtual event, the descriptions and screenshots will be from a "Feature Set B" environment.
 
 ### The exercises
 
