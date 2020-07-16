@@ -21,11 +21,11 @@ Finally, you'll be wearing different hats throughout this Virtual Event, using y
 - Workflow Initiator
 - Workflow Participant
 
-This exercise helps you get started with setting things up, with the aid of an SAP Cloud Platform booster.
+This exercise helps you get started with setting things up, with the aid of an SAP Cloud Platform [booster](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fb1b56148f834749a2bf51127421610b.html).
 
 ## Steps
 
-After completing the steps in this exercise you'll have appropriate roles set up and assigned to your user, an IDE set up and configured to work with Workflow artifacts, and an instance of the main Workflow service set up explicitly, along side instances of some other related services. Instances of the Authorization & Trust Management and HTML5 Application Repository services mentioned earlier will be set up implicitly in the next exercise.
+After completing the steps in this exercise you'll have appropriate roles set up and assigned to your user, an IDE set up and configured to work with Workflow artifacts, and an instance of the main Workflow service set up explicitly, alongside instances of some other related services. Instances of the Authorization & Trust Management and HTML5 Application Repository services mentioned earlier will be set up implicitly in the next exercise.
 
 ### 1. Log on to the SAP Cloud Platform Cockpit and look around
 
@@ -54,9 +54,9 @@ At this point you're ready to provision the service instances you'll need for yo
 
 Until recently, this was done manually but the advent of SAP Cloud Platform [boosters](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fb1b56148f834749a2bf51127421610b.html) make things simpler.
 
-There's a booster available for Workflow Management. Boosters can be found via the "Boosters" menu item - which is at the global account level.
+There's a booster available for Workflow Management. Boosters can be found via the corresponding menu item - which is at the global account level.
 
-:point_right: Use the breadcrumb trail at the top of the cockpit page to navigate to the global account level. If you're following on from where you left off in the previous step, where you were viewing the "dev" space tile in the Cloud Foundry organization relating to your trial subaccount, the trail will look something like this:
+:point_right: Use the breadcrumb trail at the top of the cockpit page to navigate to the global account level. If you're following on from where you left off in the previous step, where you were viewing the "dev" space tile in the CF organization relating to your trial subaccount, the breadcrumb trail will look something like this:
 
 ```
 Trial Home / 898789e9trial / trial
@@ -84,9 +84,30 @@ You may be curious as to exactly what the booster did. We got a rough idea from 
 
 > In case you're wondering, the booster automatically identified and used the trial subaccount.
 
-First, let's check
+First, let's check the service instances.
 
-At this stage you're all set with the main Workflow service and have access to use it.
+:point_right: Use the Trial Subaccount Home bookmark you created earlier in this exercise, and you'll see on arriving at the subaccount, with the CF environment details displayed, that you now have a number of service instances. Select that number to jump directly to the instance list, whereupon you'll see something like this:
+
+![List of service instances](serviceinstances.png)
+
+Notice that not only do you now have an instance of the Workflow service, but also instances of the Portal service, the Business Rules service, the Process Visibility service and the Connectivity service. These have all been set up by the booster. You won't be needing the Process Visibility or Business Rules service instances, but it's fine to leave them there for now.
+
+Now let's check the destinations.
+
+:point_right: Use the Trial Subaccount Home bookmark again and select Destinations from the left hand menu.
+
+You should see that two destinations have been set up, both relating to the Business Rules service. Again, you can leave them as they are, although we won't be using them in this Virtual Event.
+
+![Business Rules related destinations](destinations.png)
+
+Finally, let's check the security artifacts that have been set up.
+
+:point_right: Within the Security entry in the left hand menu, select the Role Collections item.
+
+You should see a new Role Collection has been defined, called "BPMService", containing a fair number of Roles, relating to Process Visibility (those are prefixed with "PV"), the Business Rules service, and of course the Workflow service. You should also be able to see that this Role Collection has been assigned to your user.
+
+![Role Collection BPMService](bpmservice-rolecollection.png)
+Great! At this stage you're all set with the main Workflow service and have access to use it.
 
 
 ### 4. Set up the SAP Web IDE
