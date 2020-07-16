@@ -31,7 +31,9 @@ You should see some XML returned, that looks similar to this:
 
 ### 2. Create a new destination definition
 
-:point_right: Go to your "CF Trial Subaccount Home" page, and select the "Destinations" menu item within the "Connectivity" item.
+:point_right: Go to your "Trial Subaccount Home" page, and select the "Destinations" menu item within the "Connectivity" item.
+
+> You can define destinations at the subaccount level, or at the level of a destination service instance. We'll be defining our destination at the subaccount level in this Virtual Event.
 
 :point_right: Select the "New Destination" option, and in the configuration specify values for the appropriate parameters. Some values will depend on whether you have successfully completed the previous exercise and set up the SAP Cloud Connector or not, so the entire value set is presented twice, covering both scenarios. Use the values for your scenario.
 
