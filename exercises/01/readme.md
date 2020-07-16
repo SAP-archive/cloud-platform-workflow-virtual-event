@@ -164,7 +164,7 @@ There's one final activity you should complete at this stage, and that's to poin
 
 |Setting|Value to set|
 |-------|-----------|
-|Cloud Foundry endpoint|Refer to the endpoint shown in your Trial Subaccount overview page (open up the Trial Subaccount Home bookmark in a separate tab to see this, if you need to check). This will be a URL in the following form: `https://api.cf.<region>.hana.ondemand.com`.|
+|Cloud Foundry endpoint|Refer to the endpoint shown in your Trial Subaccount overview page (open up the Trial Subaccount Home bookmark in a separate tab to see this, if you need to check). This is the endpoint you saw in an earlier step in this exercise in the form `https://api.cf.<region>.hana.ondemand.com`|
 |Email address|This is the email address associated with your Cloud Platform account|
 |Password|This is the password associated with the email address and this account|
 |Organization|The CF organization associated with your trial subaccount. If you need to, check what this is in the Trial Subaccount overview page - it will be a series of hexadecimal values suffixed with 'trial')|
