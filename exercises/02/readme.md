@@ -1,11 +1,11 @@
 # Exercise 02 - Deploying the Workflow tools
 
-In this exercise, you'll import a complete project into your IDE, build it, and deploy it to your Cloud Foundry (CF) "dev" space in the organization associated with your SAP Cloud Platform subaccount. This project contains everything you need to have a Fiori launchpad site set up for you using the Portal service, and have injected into it tiles appropriate for accessing the Workflow related tools which you'll be using throughout the rest of this Virtual Event.
+In this exercise, you'll import a complete project into your IDE, build it, and deploy it to your Cloud Foundry (CF) "dev" space in the organization associated with your SAP Cloud Platform subaccount. This project contains everything you need to have a Fiori launchpad (FLP) site set up for you using the Portal service, and have injected into it tiles appropriate for accessing the Workflow related tools which you'll be using throughout the rest of this Virtual Event.
 
 
 ## Steps
 
-After completing these steps you'll have a Fiori launchpad with, amongst other things, an app for viewing and processing Workflow items ("My Inbox") and a "Workflow Monitor" app for monitoring, starting and interacting with workflow definitions and instances.
+After completing these steps you'll have an FLP site with, amongst other things, an app for viewing and processing Workflow items ("My Inbox") and a "Workflow Monitor" app for monitoring, starting and interacting with workflow definitions and instances.
 
 
 ### 1. Download the project ZIP file
@@ -60,9 +60,36 @@ It's easy to bring such a project into your App Studio Dev Space. First, you nee
 ![BPMServiceFLP project](bpmserviceflpproject.png)
 
 
+### 3. Explore the project contents
 
+What is there in this project? What are the different files and directories? What's going to happen next? It's worth taking a couple of minutes to [stare](https://langram.org/2017/02/19/the-beauty-of-recursion-and-list-machinery/#initialrecognition) at the contents of this project to understand some details of what we're about to deploy.
 
+:point_right: Take a look through the file and directory structure, which you can see by navigating it in the Explorer perspective (you can also see the details in the tree structure above).
 
+Here's what you'll see, in an order that will hopefully make sense:
+
+> In case you're left still wondering - the `.che/` directories are specific to the IDE itself, we can safely ignore those at this level of exploration.
+
+**File: `mta.yaml`**
+
+The `mta.yaml` file within the project contains the definitions of the modules that will be deployed to SAP Cloud Platform, and also a specification of the resources upon which these modules rely. There are two modules defined:
+
+|Module|Description|
+|-|-|
+|`BPMFLP`|When deployed, this module will cause application and tile definitions to be added to the FLP site. The module itself is to be found in the `BPMFLP` directory in the project structure. It relies upon instances of a number of services, including the Workflow and Portal services. This module executes as a one-time task, and stops upon completion. Keep this in mind when you look at the applications in the SAP Cloud Platform Cockpit later on - it will be in a "STOPPED" (i.e. completed) state.
+|`BPMServicesFLP_appRouter`|This is the Approuter-based module that handles traffic to and serves the FLP site and apps within it. It relies upon instances of the same services as the `BPMFLP` module, plus another one - the HTML5 Application Repository service.|
+
+**File: xs-security.json**
+
+This file contains the parameters that are relevant when instantiating an "application" plan of the Authorization & Trust Management service (also known as "xsuaa"); in the `mta.yaml` file, the definition of the resource `uaa_bpmservices` (upon which both modules rely) includes a reference to this file.
+
+**Directory: `BPMFLP/`**
+
+This directory contains the files for the `BPMFLP` module. Taking a brief look inside, we see that it's a Node.js based module, where (by looking in the `package.json` file) we see that content is deployed by means of the `@sap/portal-cf-content-deployer` package. The content itself is to be found defined in the `portal-site/` subdirectory.
+
+**Directory: `BPMServicesFLP_appRouter`**
+
+Not unexpectedly, this directory contains the files for the `BPMServicesFLP_appRouter` module. Looking inside this directory's `package.json` file, we see that the `@sap/approuter` is employed. Perhaps more importantly, the `xs-app.json` file is what the Approuter uses to know what to serve, and how.
 
 
 
@@ -70,18 +97,13 @@ It's easy to bring such a project into your App Studio Dev Space. First, you nee
 
 ## Summary
 
-Not only do you have an instance of the main workflow service now, but also access to your own FLP site with the "My Inbox" app for managing workflow related task items, and a pair of apps for managing workflow definitions and instances. But you also have some insight into how MTAs work and what the relationship is between modules and resources defined in MTA descriptor files.
-
-Good work!
-
 
 ## Questions
 
-1. Why is the `workflowtilesFLP` app not listed in the "Referencing Applications" column for the instance of the `html5-apps-repo` service?
+1. MODIFY Why is the workflowtilesFLP app not listed in the "Referencing Applications" column for the instance of the html5-apps-repo service?
 
-1. What do you think the difference between a "workflow instance" and a "workflow definition" is?
+2. What do you think the difference between a "workflow instance" and a "workflow definition" is?
 
-1. Can you find out what the ID of the "Monitor Workflow" app is, that is accessed through the two "Monitor Workflow" tiles?
+3. Can you find out what the ID of the "Monitor Workflow" app is, that is accessed through the two "Monitor Workflow" tiles?
 
-1. Were you able to follow the deployment process in detail? How else might you do that?
-<!-- See https://blogs.sap.com/2020/05/01/terminal-tip-a-cf-remote-monitor-script/ -->
+4. What are all the services upon which the BPMFLP module relies?
