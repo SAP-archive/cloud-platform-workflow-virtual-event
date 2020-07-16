@@ -131,9 +131,10 @@ Next, you're asked to specify an initial subaccount that you want the SAP Cloud 
 
 - "Region": select the entry that reflects the Cloud Foundry API endpoint URL that is related to the organization connected to your trial subaccount. In other words, you can search by entering `cf` in the selection search box to find and select the appropriate entry, such as "Europe (Frankfurt) - AWS", which corresponds to `cf.eu10.hana.ondemand.com`, or "US East (VA) - AWS", which corresponds to `cf.us10.hana.ondemand.com`
 
-- "Subaccount": this should be the ID of your trial subaccount, from your "CF Trial Subaccount Home" page, as shown in this screenshot, where `b88f...` is the ID:
+- "Subaccount": this should be the ID of your trial subaccount, from your "Trial Subaccount Home" page, as shown in this screenshot, where `b844...` is the ID (note there are other IDs relating to connected environments, but it's the subaccount ID that's needed):
 
   ![subaccount ID](subaccountid.png)
+
 
 - "Display Name": specify anything you want here; we recommend you use the Subdomain name of the subaccount
 
@@ -203,7 +204,7 @@ This is the sort of thing that you should see when you've completed this step:
 
 Now the connection is established, you can also check it in your SAP Cloud Platform trial subaccount.
 
-:point_right: Back on your "CF Trial Subaccount Home" page in the SAP Cloud Platform Cockpit, select the "Connectivity" item in the navigation menu, and within that, choose the "Cloud Connectors" item. You should see your SAP Cloud Connector connection information, plus the "virtuales5" host you exposed. It should look something like this:
+:point_right: Back on your "Trial Subaccount Home" page in the SAP Cloud Platform Cockpit, select the "Connectivity" item in the navigation menu, and within that, choose the "Cloud Connectors" item. You should see your SAP Cloud Connector connection information, plus the "virtuales5" host you exposed. It should look something like this:
 
 ![connection established](connectionestablished.png)
 
