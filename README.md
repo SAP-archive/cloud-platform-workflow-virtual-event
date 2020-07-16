@@ -28,7 +28,7 @@ If you finish an exercise early, please resist the temptation to continue with t
 
 Here's an overview of the exercises.
 
-- [Exercise 01 - Setting up for Workflow on Cloud Foundry](exercises/01/)
+- [Exercise 01 - Setting up for Workflow on Cloud Platform](exercises/01/)
 - [Exercise 02 - Deploying the Workflow tools](exercises/02/)
 - [Exercise 03 - Installing & configuring the SAP Cloud Connector](exercises/03)
 - [Exercise 04 - Establishing a destination in SAP Cloud Platform](exercises/04)

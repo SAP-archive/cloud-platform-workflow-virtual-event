@@ -1,4 +1,4 @@
-# Exercise 01 - Setting up for Workflow on Cloud Foundry
+# Exercise 01 - Setting up for Workflow on Cloud Platform
 
 In this exercise you'll set up and configure the basic aspects that you'll need to complete this Workflow Virtual Event on SAP Cloud Platform, specifically in the Cloud Foundry (CF) environment.
 
