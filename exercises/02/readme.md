@@ -124,7 +124,7 @@ At this stage you're ready to deploy the project contents, in the form of the ar
 
 ![Deploy MTA Archive command](deploymtaarchivecommand.png)
 
-Because you've already connected your App Studio Dev Space "Workflow" to your Cloud Foundry organization and space, the deployment should start immediately. Again, as well as the progress, the task window shows you the command that was invoked:
+Because you've already connected your App Studio Dev Space "Workflow" to your CF Foundry organization and space, the deployment should start immediately. Again, as well as the progress, the task window shows you the command that was invoked:
 
 ```
 cf deploy /home/user/projects/BPMServicesFLP/mta_archives/BPMServicesFLP_0.0.1.mtar
@@ -133,25 +133,26 @@ cf deploy /home/user/projects/BPMServicesFLP/mta_archives/BPMServicesFLP_0.0.1.m
 After a short time the deployment will complete, and you should see a log message in the output like this, towards the end:
 
 ```
-Application "BPMServicesFLP_appRouter" started and available at "898789e9trial-dev-bpmservicesflp-approuter.cfapps.eu10.hana.ondemand.com"
+Application "BPMServicesFLP_appRouter" started and available
+at "898789e9trial-dev-bpmservicesflp-approuter.cfapps.eu10.hana.ondemand.com"
 ```
 
-This is the URL of the `BPMServicesFLP_appRouter` module that has been deployed, and will be specific to your Cloud Platform trial subaccount. You can use this URL to get to the FLP site, but instead, let's take another, slightly more long winded but definitely more interesting route.
+This is the URL of the `BPMServicesFLP_appRouter` module that has been deployed, and will be specific to your Cloud Platform trial subaccount. You could use this URL right now to get to the FLP site, but instead, let's take another, slightly more long winded but definitely more interesting route.
 
 
 ### 6. Find the FLP site URL and get to the Workflow tiles
 
 In the final step in this exercise, you should get to the Workflow tiles in the FLP site.
 
-:point_right: In a new browser tab, use the Trial Subaccount Home bookmark you saved earlier to get back to your subaccount overview. You should now see, in the "Spaces" section, that there are a couple of applications, and yet more service instances.
+:point_right: In a new browser tab, use the Trial Subaccount Home bookmark you saved earlier to get back to your subaccount overview in the cockpit. You should now see, in the "Spaces" section, that there are a couple of applications, and yet more service instances.
 
 ![Space oveview](spaceoverview.png)
+
+> The number of service instances that you will see may be different to what is shown in these screenshots. There should be 7 in total now that are related to this Virtual Event.
 
 :point_right: Use the "Spaces" menu item on the left hand side to jump to the summary of spaces, and you'll also see a similar reflection of reality, where memory and service quota have been consumed, and there are two applications, one started and one stopped:
 
 ![Dev space detail](devspacedetail.png)
-
-> The number of service instances that you will see may be different to what is shown in this screenshots. There should be 7 in total now that are related to this Virtual Event.
 
 :point_right: Select the "dev" space and you should be brought initially to the list of applications. There you should see entries for the two modules defined in the `mta.yaml` file earlier - `BPMFLP` and `BPMServicesFLP_appRouter`. As expected, the `BPMFLP` application is in a "Stopped" state, as the task that it carried out completed.
 
@@ -178,7 +179,7 @@ Not only that, but as a reward for coming such a long way round (just kidding), 
 
 ## Summary
 
-Not only do you have an instance of the main workflow service now, but also access to your own FLP site with the "My Inbox" app for managing workflow related task items, and a pair of apps for managing workflow definitions and instances. But you also have some insight into how MTAs work and what the relationship is between modules and resources defined in MTA descriptor files.
+Not only do you have an instance of the main Workflow service now, but also access to your own FLP site with the "My Inbox" app for managing workflow related task items, and a pair of "Monitor Workflows" apps for managing workflow definitions and instances. But you also have some insight into how MTAs work and what the relationship is between modules and resources defined in MTA descriptor files.
 
 Good work!
 
