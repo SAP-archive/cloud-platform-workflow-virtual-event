@@ -95,41 +95,41 @@ This simple app is basically the SAP [application router](https://blogs.sap.com/
 | manifest.yml  | the descriptor file describing how the application is to be deployed, and upon which services it relies |
 | package.json  | the Node.js package description for the app, describing essentially what the app relies upon (the `@sap/approuter` package) and how to start it up |
 | xs-app.json   | The approuter configuration, in the form of a single route that uses the `shopinfo` destination |
-| .npmrc        | Some local Node.js package manager (npm) configuration to define which registry to use for `@sap`-namespaced packages |
 
-The three files `package.json`, `xs-app.json` and `.npmrc` have been bundled together into the archive file `app.zip` (also in the same `dest-test-app` directory). There's also an `xs-security.json` file which describes how the `xsuaa` service should be configured, a service upon which the app relies.
+The files `package.json` and `xs-app.json` have been bundled together into the archive file `app.zip` (also in the same `dest-test-app` directory). There's also an `xs-security.json` file which describes how the `xsuaa` service should be configured, a service upon which the app relies.
 
 :point_right: Download the [`app.zip`](dest-test-app/app.zip) and [`manifest.yml`](dest-test-app/manifest.yml) files. Download the `xsuaa` service parameter file [`xs-security.json`](dest-test-app/xs-security.json) file too.
 
-In fact, the successful operation of the app relies on not one but three services, which you'll set up manually first, before deploying the app:
+In fact, the successful operation of the app relies on not one but three services:
 
 - Authorization & Trust Management (`xsuaa`)
 - Connectivity (`connectivity`)
 - Destination (`destination`)
 
-:point_right: Go to your "CF Dev Space Home" and select the "Service Marketplace" menu item (within the "Services" item). From here you'll be setting up instances of these three services, using the same procedure each time:
+You'll set up two of these (`xsuaa` and `destination`) manually, now, before deploying the app.
+
+:point_right: Navigate to the "dev" space in your Cloud Foundry (CF) organization, by first using the "Trial Subaccount Home" bookmark and then selecting the "dev" space from there. When you get there (it should default to showing you the Applications view in that space), create a second bookmark and call it "Dev Space Home".
+
+:point_right: From there, select the "Service Marketplace" menu item (within the "Services" item in the menu on the left hand side). From here you'll be setting up instances of these three services, using the same procedure each time:
 
 1. Select the service from the Service Marketplace
 1. From the service's Overview page that appears, select the "Instances" menu item
 1. Use the "New Instance" button to create a new instance, and specify details for the steps in the resulting dialog each time, according to the following table
 
-| Service:   | Authorization & Trust Management | Connectivity | Destination |
-| ---------- | -------------------------------- | ------------ | ----------- |
-| Choose Service Plan | Plan: `application` | Plan `lite` | Plan `lite` |
-| Specify Parameters  | Upload the `xs-security.json` file via the "Browse" button | (none) | (none) |
-| Assign Application  | (none) | (none) | (none) |
-| Confirm             | Instance Name: `test-xsuaa` | Instance Name: `test-connectivity` | Instance Name: `test-destination` |
+|Service|Technical Name|Service Plan|Parameters|Assign Application|Instance Name|
+|Authorization & Trust Management|`xsuaa`|`application`|Upload the `xs-security.json` file via the "Browse" button|(none)|`test-xsuaa`|
+|Destination|`destination`|`lite`|(none)|(none)|`test-destination`|
 
 > It's important that you use the instance names specified here, as they are referenced by name in the app's [`manifest.yml`](dest-test-app/manifest.yml) file.
 
-After doing this, you should have three service instances alongside your already existing workflow related instances; checking the "Service Instances" in your "CF Dev Space Home", you should see something like this:
+After doing this, you should have a couple of new service instances alongside your already existing instances; checking the "Service Instances" in your "Dev Space Home" should confirm this:
 
 ![service instances](serviceinstances.png)
 
 
 Now the service instances are in place, it's time to deploy the app itself.
 
-:point_right: Still in your "CF Dev Space Home", select the "Applications" menu item and use the "Deploy Application" button. For the "File Location", browse to and select the `app.zip` archive that you previously downloaded. Ensure that the "Use Manifest" checkbox is selected, then browse to and select the `manifest.yml` file that you also previously downloaded for the "Manifest Location". Then use the "Deploy" button.
+:point_right: Still in your "Dev Space Home", select the "Applications" menu item and use the "Deploy Application" button. For the "File Location", browse to and select the `app.zip` archive that you previously downloaded. Ensure that the "Use Manifest" checkbox is selected, then browse to and select the `manifest.yml` file that you also previously downloaded for the "Manifest Location". Then use the "Deploy" button.
 
 In a few moments, your app should be shown in the list as in the green "Started" state.
 

@@ -8,5 +8,5 @@ applications:
   memory: 128M
   services:
     - test-xsuaa
-    - test-connectivity
+    - default_connectivity
     - test-destination
