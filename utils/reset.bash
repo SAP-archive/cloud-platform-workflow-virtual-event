@@ -36,6 +36,7 @@ deleteApp BPMServicesFLP_appRouter
 # Delete - service instances
 read -r -d '' instances <<EOF
 BPMServicesFLP_html5_repo_runtime
+default_business-rules
 default_connectivity
 default_portal
 default_processvisibility
@@ -50,4 +51,5 @@ done
 # Delete - role collection
 sapcp delete security/role-collection BPMServices
 
-
+# Delete - destinations
+#./utils/delete-destination.bash
