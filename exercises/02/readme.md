@@ -116,7 +116,7 @@ Towards the end of the process you'll see progress log records that look like th
 :point_right: Look in the Explorer, and you'll see that an archive file, with an `mtar` extension, has been generated and placed in a new `mta_archives/` directory. This archive file is what is to be deployed in the next step.
 
 
-### 5. Deploy the MTA archive to Cloud Platform
+### 5. Deploy the MTA archive to Cloud Platform
 
 At this stage you're ready to deploy the project contents, in the form of the archive that has just been built, to the CF environment of your Cloud Platform trial account.
 
