@@ -20,7 +20,6 @@ Finally, you'll be wearing different hats throughout this Virtual Event, using y
 - Workflow Developer
 - Workflow Initiator
 - Workflow Participant
-- Workflow Viewer
 
 This exercise helps you get started with setting things up, with the aid of an SAP Cloud Platform booster.
 
@@ -49,71 +48,43 @@ On entering your trial account, if you've created your SAP Cloud Platform trial 
 ![space detail](spacedetail.png)
 
 
-### 2. Set up a Workflow service instance in your CF space
+### 2. Use a booster to set up service instances and related artifacts
 
-At this point you're ready to create an instance of the Workflow service.
+At this point you're ready to provision the service instances you'll need for your work with the Workflow service.
 
-:point_right: Select your "dev" (or equivalent) space from the "Spaces" page shown in the previous screenshot, to bring yourself to the level of that space, where you can deploy applications and create and manage instances of services, amongst other things.
+Until recently, this was done manually but the advent of SAP Cloud Platform [boosters](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fb1b56148f834749a2bf51127421610b.html) make things simpler.
 
-:point_right: This is also a place we'll be coming back to over the course of this Virtual Event, so let's also give this page a name and bookmark it. Let's call this page "CF Dev Space Home". Bookmark this one too, with this name.
+There's a booster available for Workflow Management. Boosters can be found via the "Boosters" menu item - which is at the global account level.
 
-Expand the "Services" menu item on the left and select the "Service Marketplace" to see the services available to you. You should see an entry for each of the services listed at the start of this exercise:
+:point_right: Use the breadcrumb trail at the top of the cockpit page to navigate to the global account level. If you're following on from where you left off in the previous step, where you were viewing the "dev" space tile in the Cloud Foundry organization relating to your trial subaccount, the trail will look something like this:
 
-![service marketplace](servicemarketplace.png)
+```
+Trial Home / 898789e9trial / trial
+```
 
-:point_right: Find and select the Workflow service which should bring you to an overview, where the available "Service Plans" are listed. This should include a "lite" plan which is what you need.
+In this example, `898789e9trial` represents the global account, and `trial` represents the subaccount.
 
-![Workflow service overview](workflowoverview.png)
+:point_right: Select the Boosters menu item and find the "Set up account for Workflow Management booster"; you can filter for it with the "Extension Suite - Digital Process Automation" value as shown.
 
-:point_right: Using the "Instances" menu item on the left, create a new instance with the "lite" service plan by using the "New Instance" button and following the dialog flow, paying attention at each of the steps:
+![The booster](boostertile.png)
 
-- Step "Choose Service Plan": select the "lite" plan
-- Step "Specify Parameters (Optional)": specify the following in the text area:
-  ```json
-  {
-    "authorities": [
-      "WORKFLOW_DEFINITION_GET",
-      "WORKFLOW_INSTANCE_START"
-    ]
-  }
-  ```
-- Step "Assign Application (Optional)": leave everything as-is
-- Step "Confirm": specify `workflow` as the instance name, leave everything else as-is
+The booster enables automatic setup of Cloud Platform artifacts focused around a certain topic or set of services. This one, relating to Workflow Management, actually sets up more than we'll need for this Virtual Event - it includes Business Rules and Process Visibility related artifacts. But that's fine for now; the important thing is that it will do the following for us:
 
-The instance name `workflow` is important as you'll refer to it later.
+- set appropriate service quotas
+- create relevant service instances
+- define destinations
+- create and assign a role collection
 
-> The authorities you specified in the "Specify Parameters (Optional)" step will be needed in a [later exercise](../06/), when you come to call the Workflow API.
+:point_right: Start the booster, and wait for it to complete.
 
 
-### 3. Create a role collection and assign it to yourself
+### 3. Check what the booster did for you
 
-Now you have a Workflow service instance in your space, it's time to assign workflow roles to yourself.
+You may be curious as to exactly what the booster did. We got a rough idea from the progress indicator that was shown while the booster was working. But now let's take a quick look ourselves.
 
-:point_right: Using the breadcrumb trail remarked upon earlier, go back to the subaccount's CF overview and select the "Role Collections" menu item within the "Security" menu item on the left.
+> In case you're wondering, the booster automatically identified and used the trial subaccount.
 
-> The observant amongst you will have noticed that the quota display for the "dev" space has now changed to reflect that there's a service instance now existing (and taking up a slot in the quota - if it's a fresh space it will say something like "1 of N services").
-
-:point_right: Add a new role collection with the "New Role Collection" button, giving it the name `workflow`. Select it from the list when it appears, to add roles to it.
-
-:point_right: In the role collection overview that appears when you select the role collection, use the "Add Role" multiple times to add the roles mentioned at the start of this exercise. Make sure you specify the correct Application Identifier each time - it will begin "workflow" and be joined to an identifier with a "!" symbol, something like this:
-
-`workflow!b1774`
-
-> It doesn't matter if the identifier is different to this example.
-
-When you're done, the collection should look like this:
-
-![role collection with five roles](rolecollection.png)
-
-At this stage you have a new role collection; now you need to assign it to yourself.
-
-:point_right: Go back to where you started this step from, and select the "Trust Configuration" item from within the "Security" menu item, where you should see an existing entry for the default active identity provider (the SAP ID service), which may have the name `sap.default`:
-
-![trust configuration overview](trustconfigoverview.png)
-
-:point_right: Select the default active identity provider and in the following screen, enter the email address associated with the trial account you're using, and select the "Show Assignments" button. Then use the "Assign Role Collection" button to select and assign the new "workflow" role collection you just created.
-
-![workflow role collection assigned](collectionassigned.png)
+First, let's check
 
 At this stage you're all set with the main Workflow service and have access to use it.
 
