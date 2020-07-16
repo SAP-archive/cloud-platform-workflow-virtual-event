@@ -112,32 +112,74 @@ You should see a new Role Collection has been defined, called "BPMService", cont
 Great! At this stage you're all set with the main Workflow service and have access to use it.
 
 
-### 4. Set up the SAP Web IDE
+### 4. Set up the IDE
 
-Now it's time to set up the IDE you'll be using, which in this case is the SAP Web IDE. You'll configure it to use a special "Workflow Editor" extension, and also specify your CF details to connect to.
+Now it's time to set up the IDE you'll be using, which in this case is the SAP Business Application Studio, which we'll refer to henceforth as the App Studio.
 
-:point_right: Jump back to the landing page by clicking on the first element in the breadcrumb trail (this will be something like "Trial Home") at the top of the page, then use the "SAP Web IDE" button you saw earlier, to start the IDE, which should present itself to you like this:
+The App Studio facility is available on SAP Cloud Platform via a subscription, meaning getting access to it is rather straightforward.
 
-![SAP Web IDE](sapwebide.png)
+:point_right: Use the Trial Subaccount Home bookmark to jump to your subaccount overview, and select the Subscriptions menu item on the left hand side. Find and select the "SAP Business Application Studio" tile and use the "Subscribe" button to create a subscription to it in your account.
 
-There are different perspectives that this IDE supports, with icons on the far left to jump to them. The perspectives include "Home" (where you are now), "Editor" (identified with angle-brackets icon), "Storyboard" (rocket icon) and "Preferences" (cog icon). There may be a "Database Explorer" perspective available too (building blocks icon).
+![The Subscribe button for the SAP Business Application Studio](bas-subscribe.png)
 
-:point_right: Select the "Preferences" perspective, and within the "Workspace Preferences" choose first the "Cloud Foundry" entry. In the "Cloud Foundry Space" settings, specify the details for the API Endpoint, Organization and Space you're using. Remember that the API Endpoint is something that you looked at briefly earlier in this exercise. While specifying these details, you'll be asked to provide authentication information. Finally, don't forget to select the "Save" button at the bottom of the page.
+Once subscribed, you'll see a "Go to Application" link. But before you attempt to launch it, you must ensure that you have the appropriate [App Studio roles](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/01e69c53003c4b0a8a64310a3f08867d.html).
 
-What you end up with should look something like this:
+:point_right: Jump to your subaccount overview page with the Trial Subaccount Home bookmark, and select the "Trust Configuration" item within the "Security" entry in the menu on the left hand side. Select the "sap.default" entry as shown in the screenshot (it may be a different name, but it is usually going to be the only entry to select anyway), and in the following screen, enter your ID - the email address associated with your account - and select the "Show Assignments" button to bring up the current list, and to give you the ability to assign further Role Collections.
 
-![CF space](cloudfoundryspace.png)
+![Trust Configuration](trustconfiguration.png)
 
-:point_right: Now choose the "Extensions" entry within the "Workspace Preferences" and search for the "Workflow Editor" extension. Make sure it's switched to "ON" and hit "Save" at the bottom again. You may need to allow the IDE to restart at this point.
+:point_right: Use the "Assign Role Collection" dialog box to select and assign these Role Collections:
+
+- Business_Application_Studio_Administrator
+- Business_Application_Studio_Developer
+
+![Assigning App Studio Role Collections](rolecollectionassignment.png)
+
+Now you should be able to start up and access the App Studio subscription.
+
+:point_right: Go back to the App Studio subscription page, and use the "Go to Application" link you saw earlier.
+
+The App Studio has the concept of "Dev Spaces", separate, multiple, development environments individually tailored with tools for different tasks. The landing page you see when starting App Studio for the first time gives you the opportunity to create one of these spaces, and we'll use the opportunity to create one with tools specifically for this Virtual Event.
+
+![Dev Spaces page](devspaces.png)
+
+:point_right: Select the "Create Dev Space" button to get to the place where you can and should specify a name for your space, and the extensions you want. Use the name "Workflow", start with the "Basic" space option, and make sure you select these two additional SAP extensions:
+
+- MTA Tools
+- Workflow Management
+
+![Create a new Dev Space](newdevspace.png)
+
+:point_right: Once you've made the appropriate settings, use the "Create Dev Space" button to initiate the creation of the space, which should take only a few moments, and result in its availability being presented to you, whereupon you can access it via the "Workflow" name link.
+
+![Dev Space available](devspaceavailable.png)
+
+For those already acquainted with IDEs such as VS Code, SAP Business Application Studio should be happily familiar to you.
+
+![App Studio](appstudio.png)
+
+There's one final activity you should complete at this stage, and that's to point your new Dev Space to your CF organization and space, ready for deployments later in this Virtual Event. Let's do that now.
+
+:point_right: In the bar at the bottom, there'll be a message along these lines: "The organization and space in Cloud Foundry have not been set". Select this message to initiate a short UI interaction at the top of the screen to allow you to confirm the settings. Specify the following:
+
+|Setting|Value to set|
+|-------|-----------|
+|Cloud Foundry endpoint|Refer to the endpoint shown in your Trial Subaccount overview page (open up the Trial Subaccount Home bookmark in a separate tab to see this, if you need to check). This will be a URL in the following form: `https://api.cf.<region>.hana.ondemand.com`.|
+|Email address|This is the email address associated with your Cloud Platform account|
+|Password|This is the password associated with the email address and this account|
+|Organization|The CF organization associated with your trial subaccount. If you need to, check what this is in the Trial Subaccount overview page - it will be a series of hexadecimal values suffixed with 'trial')|
+|Space|The space within the organization you just selected. If this is a freshly set up trial account, the name of the space is likely to be "dev"|
+
+That's it! You should get a message confirming that the Dev Space is now connected to your CF organization and space.
+
+![target message](targetmessage.png)
 
 
 ## Summary
 
-At this point you're all set up to embark upon your Workflow service journey, with an instance of the main Workflow service available to you, and an IDE that can help you build and manage workflow definitions and make deployments to your CF environment on SAP Cloud Platform.
+At this point you're all set up to embark upon your Workflow service journey, with an instance of the main Workflow service available to you, and an IDE that can help you build and manage workflow definitions and make deployments to your environment on SAP Cloud Platform.
 
 
 ## Questions
 
 1. What are the relationships between SAP Cloud Platform subaccounts, Cloud Foundry organizations and spaces?
-
-1. While you've set up the SAP Web IDE, what other options might you have for this Virtual Event?
