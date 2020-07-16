@@ -60,7 +60,7 @@ It's easy to bring such a project into your App Studio Dev Space. First, you nee
 ![BPMServiceFLP project](bpmserviceflpproject.png)
 
 
-### 3. Explore the project contents
+### 3. Explore the project contents
 
 What is there in this project? What are the different files and directories? What's going to happen next? It's worth taking a couple of minutes to [stare](https://langram.org/2017/02/19/the-beauty-of-recursion-and-list-machinery/#initialrecognition) at the contents of this project to understand some details of what we're about to deploy.
 
