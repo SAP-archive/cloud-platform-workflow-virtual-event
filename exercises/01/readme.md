@@ -25,7 +25,7 @@ This exercise helps you get started with setting some of these things up, with t
 
 ## Steps
 
-After completing the steps in this exercise you'll have appropriate roles set up and assigned to your user, an IDE set up and configured to work with Workflow artifacts, and an instance of the main Workflow service set up explicitly, alongside instances of some other related services. Instances of the Authorization & Trust Management and HTML5 Application Repository services mentioned earlier will be set up implicitly in the next exercise.
+After completing the steps in this exercise you'll have appropriate roles set up and assigned to your user, an IDE set up and configured to work with Workflow artifacts, and an instance of the main Workflow service set up, alongside instances of some other related services. Instances of the Authorization & Trust Management and HTML5 Application Repository services mentioned earlier will be set up in the next exercise.
 
 ### 1. Log on to the SAP Cloud Platform Cockpit and look around
 
@@ -50,13 +50,11 @@ On entering your trial account, if you've created your SAP Cloud Platform trial 
 
 ### 2. Use a booster to set up service instances and related artifacts
 
-At this point you're ready to provision the service instances you'll need for your work with the Workflow service.
-
-Until recently, this was done manually but the advent of SAP Cloud Platform [boosters](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fb1b56148f834749a2bf51127421610b.html) make things simpler.
+At this point you're ready to provision the service instances you'll need for your work with the Workflow service. Until recently, this was done manually but the advent of SAP Cloud Platform [boosters](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fb1b56148f834749a2bf51127421610b.html) make things simpler.
 
 There's a booster available for Workflow Management. Boosters can be found via the corresponding menu item - which is at the global account level.
 
-:point_right: Use the breadcrumb trail at the top of the cockpit page to navigate to the global account level. If you're following on from where you left off in the previous step, where you were viewing the "dev" space tile in the CF organization relating to your trial subaccount, the breadcrumb trail will look something like this:
+:point_right: Use the breadcrumb trail at the top of the cockpit page to navigate back to the global account level. If you're following on from where you left off in the previous step, where you were viewing the "dev" space tile in the CF organization relating to your trial subaccount, the breadcrumb trail will look something like this:
 
 ```
 Trial Home / 898789e9trial / trial
@@ -86,7 +84,7 @@ You may be curious as to exactly what the booster did. We got a rough idea from 
 
 First, let's check the service instances.
 
-:point_right: Use the Trial Subaccount Home bookmark you created earlier in this exercise, and you'll see on arriving at the subaccount, with the CF environment details displayed, that you now have a number of service instances. Select that number to jump directly to the instance list, whereupon you'll see something like this:
+:point_right: Use the Trial Subaccount Home bookmark you created earlier in this exercise, and you'll see on arriving at the subaccount, with the CF environment details displayed, that you now have a number of service instances in your "dev" space. Select that number to jump directly to the instance list, whereupon you'll see something like this:
 
 ![List of service instances](serviceinstances.png)
 
@@ -106,7 +104,7 @@ Finally, let's check the security artifacts that have been set up.
 
 :point_right: Within the Security entry in the left hand menu, select the Role Collections item.
 
-You should see a new Role Collection has been defined, called "BPMService", containing a fair number of Roles, relating to Process Visibility (those are prefixed with "PV"), the Business Rules service, and of course the Workflow service. You should also be able to see that this Role Collection has been assigned to your user.
+You should see a new Role Collection has been defined, called "BPMService", containing a fair number of Roles, relating to Process Visibility (prefixed with "PV"), the Business Rules service, and of course the Workflow service. You should also be able to see that this Role Collection has been assigned to your user.
 
 ![Role Collection BPMService](bpmservice-rolecollection.png)
 Great! At this stage you're all set with the main Workflow service and have access to use it.
@@ -114,15 +112,17 @@ Great! At this stage you're all set with the main Workflow service and have acce
 
 ### 4. Set up the IDE
 
-Now it's time to set up the IDE you'll be using, which in this case is the SAP Business Application Studio, which we'll refer to henceforth as the App Studio.
+Now it's time to set up the IDE you'll be using, which in this case is the [SAP Business Application Studio](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/8f46c6e6f86641cc900871c903761fd4.html), which we'll refer to henceforth as the App Studio.
 
 The App Studio facility is available on SAP Cloud Platform via a subscription, meaning getting access to it is rather straightforward.
+
+**Setting up a subscription**
 
 :point_right: Use the Trial Subaccount Home bookmark to jump to your subaccount overview, and select the Subscriptions menu item on the left hand side. Find and select the "SAP Business Application Studio" tile and use the "Subscribe" button to create a subscription to it in your account.
 
 ![The Subscribe button for the SAP Business Application Studio](bas-subscribe.png)
 
-Once subscribed, you'll see a "Go to Application" link. But before you attempt to launch it, you must ensure that you have the appropriate [App Studio roles](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/01e69c53003c4b0a8a64310a3f08867d.html).
+Once subscribed, you'll see the "Go to Application" link become active. But before you attempt to launch it, you must ensure that you have the appropriate [App Studio roles](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/01e69c53003c4b0a8a64310a3f08867d.html).
 
 :point_right: Jump to your subaccount overview page with the Trial Subaccount Home bookmark, and select the "Trust Configuration" item within the "Security" entry in the menu on the left hand side. Select the "sap.default" entry as shown in the screenshot (it may be a different name, but it is usually going to be the only entry to select anyway), and in the following screen, enter your ID - the email address associated with your account - and select the "Show Assignments" button to bring up the current list, and to give you the ability to assign further Role Collections.
 
@@ -136,6 +136,9 @@ Once subscribed, you'll see a "Go to Application" link. But before you attempt t
 ![Assigning App Studio Role Collections](rolecollectionassignment.png)
 
 Now you should be able to start up and access the App Studio subscription.
+
+
+**Starting up the App Studio & creating a Dev Space**
 
 :point_right: Go back to the App Studio subscription page, and use the "Go to Application" link you saw earlier.
 
@@ -158,17 +161,20 @@ For those already acquainted with IDEs such as VS Code, SAP Business Application
 
 ![App Studio](appstudio.png)
 
+
+**Connecting to CF**
+
 There's one final activity you should complete at this stage, and that's to point your new Dev Space to your CF organization and space, ready for deployments later in this Virtual Event. Let's do that now.
 
 :point_right: In the bar at the bottom, there'll be a message along these lines: "The organization and space in Cloud Foundry have not been set". Select this message to initiate a short UI interaction at the top of the screen to allow you to confirm the settings. Specify the following:
 
 |Setting|Value to set|
 |-------|-----------|
-|Cloud Foundry endpoint|Refer to the endpoint shown in your Trial Subaccount overview page (open up the Trial Subaccount Home bookmark in a separate tab to see this, if you need to check). This is the endpoint you saw in an earlier step in this exercise in the form `https://api.cf.<region>.hana.ondemand.com`|
-|Email address|This is the email address associated with your Cloud Platform account|
-|Password|This is the password associated with the email address and this account|
-|Organization|The CF organization associated with your trial subaccount. If you need to, check what this is in the Trial Subaccount overview page - it will be a series of hexadecimal values suffixed with 'trial')|
-|Space|The space within the organization you just selected. If this is a freshly set up trial account, the name of the space is likely to be "dev"|
+|Cloud Foundry endpoint|This is the endpoint you saw in an earlier step in this exercise in the form `https://api.cf.<region>.hana.ondemand.com`. Refer to the details shown in your Trial Subaccount overview page (open up the Trial Subaccount Home bookmark in a separate tab to see this, if you need to check).|
+|Email address|This is the email address associated with your Cloud Platform account.|
+|Password|This is the password associated with the email address and this account.|
+|Organization|This is the CF organization associated with your trial subaccount. If you need to, check what this is in the Trial Subaccount overview page - it will be a series of hexadecimal values suffixed with 'trial').|
+|Space|This is the space within the organization you just selected. If this is a freshly set up trial account, the name of the space is likely to be "dev".|
 
 That's it! You should get a message confirming that the Dev Space is now connected to your CF organization and space.
 
