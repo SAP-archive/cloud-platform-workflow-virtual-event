@@ -90,6 +90,8 @@ First, let's check the service instances.
 
 ![List of service instances](serviceinstances.png)
 
+> There are other service instances shown in this screenshot, you can ignore those.
+
 Notice that not only do you now have an instance of the Workflow service, but also instances of the Portal service, the Business Rules service, the Process Visibility service and the Connectivity service. These have all been set up by the booster. You won't be needing the Process Visibility or Business Rules service instances, but it's fine to leave them there for now.
 
 Now let's check the destinations.
