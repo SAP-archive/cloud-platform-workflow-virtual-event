@@ -21,7 +21,7 @@ Finally, you'll be wearing different hats throughout this Virtual Event, using y
 - Workflow Initiator
 - Workflow Participant
 
-This exercise helps you get started with setting things up, with the aid of an SAP Cloud Platform [booster](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fb1b56148f834749a2bf51127421610b.html).
+This exercise helps you get started with setting some of these things up, with the aid of an SAP Cloud Platform [booster](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fb1b56148f834749a2bf51127421610b.html).
 
 ## Steps
 
