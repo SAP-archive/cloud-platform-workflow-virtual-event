@@ -117,6 +117,7 @@ You'll set up two of these (`xsuaa` and `destination`) manually, now, before dep
 1. Use the "New Instance" button to create a new instance, and specify details for the steps in the resulting dialog each time, according to the following table
 
 |Service|Technical Name|Service Plan|Parameters|Assign Application|Instance Name|
+|-|-|-|-|-|-|
 |Authorization & Trust Management|`xsuaa`|`application`|Upload the `xs-security.json` file via the "Browse" button|(none)|`test-xsuaa`|
 |Destination|`destination`|`lite`|(none)|(none)|`test-destination`|
 
