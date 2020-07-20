@@ -146,12 +146,15 @@ The App Studio has the concept of "Dev Spaces", separate, multiple, development 
 
 ![Dev Spaces page](devspaces.png)
 
-:point_right: Select the "Create Dev Space" button to get to the place where you can and should specify a name for your space, and the extensions you want. Use the name "Workflow", start with the "Basic" space option, and make sure you select these two additional SAP extensions:
+:point_right: Select the "Create Dev Space" button to get to the place where you can and should specify a name for your space, and the extensions you want. Use the name "Workflow", start with the "Basic" space option, and make sure you select these additional SAP extensions:
 
+- Launchpad Module
 - MTA Tools
 - Workflow Management
 
 ![Create a new Dev Space](newdevspace.png)
+
+> The Launchpad Module is not directly required, but it will enable a more comfortable exploration of FLP site configuration files such as `CommonDataModel.json` that we will see in the next exercise.
 
 :point_right: Once you've made the appropriate settings, use the "Create Dev Space" button to initiate the creation of the space, which should take only a few moments, and result in its availability being presented to you, whereupon you can access it via the "Workflow" name link.
 
