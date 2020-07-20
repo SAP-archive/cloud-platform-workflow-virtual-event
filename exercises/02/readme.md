@@ -47,9 +47,9 @@ i347491@C02CH7L4MD6T [~/Downloads]
 
 ### 2. Bring the project into App Studio
 
-It's easy to bring such a project into your App Studio Dev Space. First, you need to make sure that you have a workspace opened in the Explorer. Then, you just need to drag the project folder into there.
+It's easy to bring such a project into your App Studio Dev Space. First, you need to make sure that you have a workspace opened in the Explorer. Then, you just need to drag the project directory into there.
 
-:point_right: Switch to the Explorer perspective in App Studio using the folders icon in the far left hand side, and use the Open Workspace button to select and open the "projects" directory.
+:point_right: Switch to the Explorer perspective in App Studio using the documents icon in the far left hand side, and use the Open Workspace button to select and open the "projects" directory.
 
 ![Open Workspace button](openworkspace.png)
 

@@ -3,8 +3,8 @@
 # Prepares the app archive and manifest for upload:
 # - removes previous app archive
 # - creates app archive from core files
-# - copies the archive and manifest to the accessible Chrome OS
-#   download folder, ready for upload via the Cockpit
+# - copies the archive and manifest to the download directory,
+#   ready for upload via the Cockpit
 
 # Then uses 'cf push' to deploy directly.
 
