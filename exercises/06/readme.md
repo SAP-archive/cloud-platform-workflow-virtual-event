@@ -40,9 +40,9 @@ In the API Hub you can not only explore but also try out APIs. For this, there's
 
 When you configure an environment, you need to supply endpoint and credential information, so the API Hub can facilitate making API calls for you. This information is available in the details of your workflow service instance, so you'll go there first to get that information, then return to the API Hub to specify it during the configuration.
 
-:point_right: Open up a new browser tab and go to your "CF Dev Space Home". Find the workflow service instance (use the "Service Instances" within "Services" in the left hand navigation) and select it (make sure you select the instance name "workflow", in the "Name" column, and not the service name "workflow", which is in the "Service" column).
+:point_right: Open up a new browser tab and go to your "Dev Space Home". Find the workflow service instance (use the "Service Instances" within "Services" in the left hand navigation) and select it, remembering that its name is `default_workflow`.
 
-:point_right: Now select the "Service Keys" navigation item which will reveal that there's a service key "OrderProcess-workflow-credentials" that's been created for you. It should look something like this:
+:point_right: Now select the "Service Keys" navigation item which will reveal that there's a service key "OrderProcess-workflow_mta-credentials" that's been created for you. It should look something like this:
 
 ![service key details](servicekey.png)
 
@@ -74,10 +74,10 @@ You should be defaulted to the "Create New Environment" mode.
 
 Regarding the values for the properties "consumersubdomain" and "landscapehost", these are parts that contribute towards the generated value for "Token URL". Here's an example:
 
-- the value of `uaa.url` is `https://7c40b1datrial.authentication.us10.hana.ondemand.com`
-- the value of "consumersubdomain" should be `7c40b1datrial`
-- the value of "landscapehost" should be `us10.hana.ondemand.com`
-- the resulting "Token URL" should be `https://7c40b1datrial.authentication.us10.hana.ondemand.com/oauth/token`
+- the value of `uaa.url` is `https://898789e9.authentication.eu10.hana.ondemand.com`
+- the value of "consumersubdomain" should be `898789e9trial`
+- the value of "landscapehost" should be `eu10.hana.ondemand.com`
+- the resulting "Token URL" should be `https://898789e9trial.authentication.eu10.hana.ondemand.com/oauth/token`
 
 Don't forget to save the settings when you're done.
 
@@ -149,17 +149,17 @@ You should see a response with an HTTP status code of 201, and a response body &
 **Response body**
 
 ```json
-{                                                
-  "id": "22331983-a739-11ea-99ad-eeee0a90772f",                                                                  
-  "definitionId": "orderprocess",                                                                                
-  "definitionVersion": "1",                           
-  "subject": "orderprocess",                    
-  "status": "RUNNING",                         
-  "businessKey": "",                                                                                             
+{
+  "id": "22331983-a739-11ea-99ad-eeee0a90772f",
+  "definitionId": "orderprocess",
+  "definitionVersion": "1",
+  "subject": "orderprocess",
+  "status": "RUNNING",
+  "businessKey": "",
   "startedAt": "2020-06-05T14:30:41.697Z",
   "startedBy": "sb-clone-bb8095d8-702c-40af-ba57-f4e5cd069b54!b6581|workflow!b1774",
-  "completedAt": null              
-}             
+  "completedAt": null
+}
 ```
 
 Great!
