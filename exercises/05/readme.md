@@ -42,21 +42,21 @@ In other words, the definition of the workflow itself lives within a module, whi
 
 ![yo menu](yomenu.png)
 
-:point_right: Choose "Basic Multitarget Application" and make this specification:
+:point_right: Choose "**Basic Multitarget Application**" and make this specification:
 
 |Property|Value|
 |-|-|
 |Project name|OrderFlow|
 
-The Yeoman generator should complete pretty much immediately, and you should see that there's a new project directory "OrderFlow/" visible in the App Studio Explorer.
+The Yeoman generator should complete pretty much immediately, and you should see that there's a new project directory `OrderFlow/` visible in the App Studio Explorer.
 
-:point_right: Still within the terminal, change directory into the new `OrderFlow/` directory with `cd OrderFlow/` and then invoke `yo` again, this time choosing the "@workflow/workflow Module", specifying the following:
+:point_right: Still within the terminal, move into the new `OrderFlow/` directory with `cd OrderFlow/` and then invoke `yo` again, this time choosing the "**@workflow/workflow Module**", specifying the following:
 
 |Property|Value|
 |-|-|
 |Module name|OrderProcess|
 |Workflow name|orderprocess|
-|Workflow description|<leave blank>|
+|Workflow description|(leave blank)|
 
 > You may get a message about a conflict with `mta.yaml` - here you can safely enter "y" to have the contents updated.
 
@@ -99,13 +99,13 @@ resources:
 
 ```
 
-Take a moment to stare at this. You can see that there's a single module defined, with the name `OrderProcess`, which requires a Workflow service resource named `workflow_mta`, of type `org.cloudfoundry.managed-service`. The name of this required resource has been generated from the word "workflow" suffixed with "mta".
+Take a moment to [stare](https://langram.org/2019/04/08/es6-reduce-and-pipe/) at this. You can see that there's a single module defined, with the name `OrderProcess`, which requires a Workflow service resource named `workflow_mta`, of type `org.cloudfoundry.managed-service`. The name of this required resource has been simply generated from the word "workflow" suffixed with "mta".
 
-But we already have a Workflow service instance called "default_workflow" which was created by the Workflow Management booster in an earlier exercise, so we need to adapt the references here in the `mta.yaml` file, to reflect that.
+But we already have a Workflow service instance called `default_workflow` which was created by the Workflow Management booster in an earlier exercise, so we need to adapt the references here in the `resources` section of the `mta.yaml` file, to reflect that.
 
-:point_right: First, in the `resources` section, modify the `type` of the resource defined, changing it from `org.cloudfoundry.managed-service` to `org.cloudfoundry.existing-service`, to reflect the fact that you already have a Workflow service instance.
+:point_right: First, modify the `type` of the resource defined, changing it from `org.cloudfoundry.managed-service` to `org.cloudfoundry.existing-service`, to reflect the fact that you already have a Workflow service instance.
 
-:point_right: Second, also in the `resources` section, remove both the `service-plan` and `service` parameter properties (these are usually only needed when creating a new service instance), and add a new parameter property `service-name: default_workflow` to point to your existing Workflow service instance.
+:point_right: Second, remove both the `service-plan` and `service` parameter properties (these are usually only needed when creating a new service instance), and add a new parameter property `service-name: default_workflow` to point to your existing Workflow service instance.
 
 The result should look like this:
 
@@ -135,7 +135,7 @@ Don't forget to save your changes!
 
 While this workflow definition doesn't do very much, we can still carry out an initial exploration with the apps we made available in the Fiori launchpad in [Exercise 02](../02). So in this step we'll build and deploy the workflow definition to SAP Cloud Platform to be able to do that.
 
-:point_right: Use the context menu on the `mta.yaml` file in the App Studio Explorer (make sure it's the one in the `OrderFlow/` project directory!) and choose "Build MTA".
+:point_right: Use the context menu on the `mta.yaml` file in the App Studio Explorer (make sure it's the one in the `OrderFlow/` project directory) and choose "Build MTA".
 
 > If you prefer, you can stay in the terminal and build the MTA there by invoking `mbt build`.
 
