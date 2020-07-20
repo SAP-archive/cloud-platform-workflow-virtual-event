@@ -30,7 +30,7 @@ done
 echo Teardown ...
 
 # Remove service key details, service key and service instance
-#rm ./key.json
+rm ./key.json
 dsik ${instance}
 
 
