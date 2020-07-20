@@ -1,5 +1,5 @@
 {
-  "xsappname": "desttest",
+  "xsappname": "my-dest-test",
   "tenant-mode": "dedicated",
   "description": "Security profile of called application",
   "scopes": [
