@@ -147,7 +147,7 @@ The build process thus triggered should complete in a few moments, and create a 
 
 > Again, if you prefer, you can stay in the terminal and deploy it from there, by invoking `cf deploy mta_archives/OrderFlow_0.0.1.mtar` (assuming here that you're still in the `OrderFlow/` directory).
 
-This deployment should also complete quite quickly. If you examine the contents of the `mta.yaml` file that you just edited, and also check the Applications and Service Instances sections of your "CF Dev Space Home" in the SAP Cloud Platform Cockpit, you'll see that this was a content deployment, rather than instantiation of any new CF service instances or applications. This makes sense, as it's a deployment of the workflow definition to the Workflow service instance.
+This deployment should also complete quite quickly. If you examine the contents of the `mta.yaml` file that you just edited, and also check the Applications and Service Instances sections of your "Dev Space Home" in the SAP Cloud Platform Cockpit, you'll see that this was a content deployment, rather than instantiation of any new CF service instances or applications. This makes sense, as it's a deployment of the workflow definition to the Workflow service instance.
 
 
 ### 3. Examine the workflow definition and create an instance of it
