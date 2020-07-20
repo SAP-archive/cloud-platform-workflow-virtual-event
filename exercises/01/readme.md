@@ -183,6 +183,10 @@ That's it! You should get a message confirming that the Dev Space is now connect
 
 ![target message](targetmessage.png)
 
+At this point, it's worth creating a bookmark for this App Studio Dev Space, as you'll be returning to it often over the course of this Virtual Event.
+
+:point_right: Create a bookmark for this Dev Space and call it "App Studio Workflow Dev Space".
+
 
 ## Summary
 
