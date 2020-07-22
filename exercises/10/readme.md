@@ -25,7 +25,7 @@ In the following steps we'll use a Script Task to access this information.
 
 ### 2. Add a Script Task to the workflow definition
 
-:point_right: Add a Script Task to the workflow definition via the "Tasks" menu in the graphical workflow editor in the SAP Web IDE Full-Stack, as shown. Place the task as the third task item in the flow, to be executed after the "Approval Decision" task:
+:point_right: Add a Script Task to the workflow definition via the "Tasks" menu in the graphical workflow editor in the SAP Web IDE Full-Stack, as shown. Place the task as the third and last task item in the flow, to be executed after the "Approval Decision" task:
 
 ![add Script Task](addscripttask.png)
 
@@ -82,6 +82,8 @@ $.context.product = product;
 $.context.usertaskinfo = $.usertasks.usertask1.last;
 ```
 
+> You may want to check the actual ID of the User Task that you added to the workflow definition; usually it's `usertask1` as the first one, but if you've been experimenting, it may be `usertask2` for example. Make sure the reference here reflects the ID of your specific User Task.
+
 :point_right: Save the workflow definition (you've saved the Script Task file but you've also made changes to the definition itself, remember) and then follow the usual "build/deploy" flow.
 
 :point_right: Once the deployment is complete, create a new instance using Postman as you've done before.
@@ -97,25 +99,26 @@ In this step you'll complete the instance you've just created by leaving a comme
 
 ![user task info in the workflow context](usertaskinfo.png)
 
-In the `usertaskinfo` property you can see that information about the User Task is clearly available, including the decision taken - in this example it was a "rejection".
+In the `usertaskinfo` property you can see that information about the User Task is clearly available, including the decision taken - in this example it was a rejection.
 
 ### 4. Prepare a message appropriate to send to the requester
 
 Armed with the decision information, you can now prepare a message, to be stored in the workflow context, to be eventually sent on to the requester. A Mail Task might be the best way to achieve this, but we won't cover it here.
 
-:point_right: Go back to the SAP Web IDE Full-Stack and into the file editor for the `preparemessage.js` file. Below the line you already have, add the following:
+:point_right: Go back to the file editor for the `preparemessage.js` file. Below the line you already have, add the following:
 
 ```javascript
-var taskinfo = $.usertasks.usertask1.last;
-$.context.message = taskinfo.subject
+$.context.message =
+    "The request for "
+  + $.context.productInfo.d.Name
   + " was "
-  + (taskinfo.decision === "approve" ? "approved" : "rejected")
+  + ($.context.usertaskinfo.decision === "approve" ? "approved" : "rejected")
   + ". The stock quantity at the time was "
   + $.context.productInfo.d.StockQuantity
   + ".";
 ```
 
-:point_right: Save the file, and build and redeploy as usual.
+:point_right: Ensure the file is saved, and build & redeploy as usual.
 
 Now we're ready for one last instantiation of this workflow definition.
 
@@ -123,7 +126,7 @@ Now we're ready for one last instantiation of this workflow definition.
 
 :point_right: Using the "Workflow Monitor - Workflow Instances", find the completed instance and examine the context - you should find a "message" property in there that is appropriate to your decision and to the stock of the product requested. Here's an example of one such message:
 
-**"Request for Notebook Basic 19 was rejected. The stock quantity at the time was 150."**
+**The request for Notebook Basic 19 was rejected. The stock quantity at the time was 150.**
 
 
 ## Summary
@@ -133,5 +136,3 @@ In addition to Service Tasks and User Tasks, you're now familiar with Script Tas
 ## Questions
 
 1. When looking at the comments in context, they were saved in a property with this path: `/response/comments`. Do you remember where this path came from, where it was specified?
-
-1. In the JavaScript you added to the User Task, what is the significance of the `usertask1` reference?
