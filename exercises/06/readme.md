@@ -107,12 +107,11 @@ An API call is made for you, with your credentials, in the context of the enviro
     "id": "orderprocess",
     "version": "1",
     "name": "orderprocess",
-    "createdBy": "sb-clone-bb8095d8-702c-40af-ba57-f4e5cd069b54!b6581|workflow!b1774",
-    "createdAt": "2020-06-05T12:39:44.668Z",
+    "createdBy": "sb-clone-9a1a2e0e-d3f0-4bc6-92dd-cf1cda8495ba!b44074|workflow!b10150",
+    "createdAt": "2020-07-21T06:53:42.998Z",
     "jobs": []
   }
 ]
-
 ```
 
 You've just made your first API call - nice work!
@@ -126,7 +125,7 @@ Now that you've tried out a simple API call, it's time to use the API to create 
 
 A payload is sent with this call, and you specify it in the "body" parameter here.
 
-:point_right: Specify the following for the value of the "body" parameter, being careful to get it exactly right, as it's JSON and quotes, colons and curly braces matter:
+:point_right: Specify the following for the value of the "body" parameter, being careful to get it exactly right, as it's JSON -- and quotes, colons and curly braces matter:
 
 ```json
 {
@@ -156,8 +155,8 @@ You should see a response with an HTTP status code of 201, and a response body &
   "subject": "orderprocess",
   "status": "RUNNING",
   "businessKey": "",
-  "startedAt": "2020-06-05T14:30:41.697Z",
-  "startedBy": "sb-clone-bb8095d8-702c-40af-ba57-f4e5cd069b54!b6581|workflow!b1774",
+  "startedAt": "2020-07-21T14:30:41.697Z",
+  "startedBy": "sb-clone-9a1a2e0e-d3f0-4bc6-92dd-cf1cda8495ba!b44074|workflow!b10150",
   "completedAt": null
 }
 ```
