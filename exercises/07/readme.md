@@ -66,9 +66,9 @@ Once you've finished adding this new environment, you should select it for use.
 
 ### 4. Set up authentication for the request
 
-The Cloud Foundry (CF) Workflow APIs are protected with OAuth 2.0, and the API Hub handles that for us, specifically using the "Client Credentials" flow. In order to make the call in Postman, we need to take the variable values we specified in our environment and use them in Postman's OAuth 2.0 configuration for retrieving an access token, which is what's requested and used in such a flow.
+The Cloud Foundry (CF) Workflow APIs are protected with OAuth 2.0, and the API Hub handles that for us, specifically using the "Client Credentials" flow. In order to make the call in Postman, using the same authentication approach, we need to take the variable values we specified in our environment and use them in Postman's OAuth 2.0 configuration for retrieving an access token, which is what's requested and used in such a flow.
 
-:point_right: Switch to the "Authorization" tab of the request and, for the type, select "OAuth 2.0". This should give you the possibility of setting things up for requesting and using OAuth 2.0 access tokens as employed in the OAuth flow we want to use:
+:point_right: Switch to the "Authorization" tab of the request and, for the type, ensure that "OAuth 2.0" is selected. This should give you the possibility of setting things up for requesting and using OAuth 2.0 access tokens as employed in the OAuth flow we want to use:
 
 ![OAuth 2.0 authorization type settings](oauthtype.png)
 
@@ -76,11 +76,13 @@ The Cloud Foundry (CF) Workflow APIs are protected with OAuth 2.0, and the API H
 
 ![request token](requesttoken.png)
 
+> You may see encoding warnings for the values in the Client ID and Client Secret fields - we can ignore those for the purposes of what we're doing here.
+
 :point_right: Use the "Request Token" button which will make the OAuth 2.0 call to request an access token, which, if all goes well, will be shown to you and subsequently be available via the "MyToken" name you gave it.
 
 > If you're curious to see what actually happened in this request, you can use Postman's console (View -> Show Postman Console) to inspect the HTTP traffic for this access token request call.
 
-:point_right: Back in the Authorization tab, now select the token using the "Available Tokens" selection, so that the "Access Token" parameter is filled in, something like this:
+:point_right: Now you need to tell Postman to use this token. Either select the "Use Token" button that's available in the current token dialog, or -- after closing this dialog to get back to the Authorization tab --  or select the token using the "Available Tokens" selection, so that the "Access Token" parameter is filled in, something like this:
 
 ![access token](accesstoken.png)
 
@@ -89,9 +91,7 @@ The Cloud Foundry (CF) Workflow APIs are protected with OAuth 2.0, and the API H
 
 In this step you'll take a final look at the request before submitting it.
 
-:point_right: While still in the Authorization tab, use the "Preview Request" button to update the request details with the authorization data (you don't have to do this, it will be generated automatically when you send the request, this is just a way of seeing it before the request is submitted).
-
-:point_right: Notice that when you do this, the number of headers shown in the Headers tab goes up by one. Switch to that tab now, and look at the Temporary Headers, where you should see an Authorization header with the access token as the value, preceded with the word "Bearer". This is Postman using the access token (that you retrieved just before) to authenticate the actual API call.
+:point_right: Switch to the Headers tab now, where you should see an Authorization header with the access token as the value, preceded with the word "Bearer". This is Postman using the access token (that you retrieved just before) to authenticate the actual API call.
 
 :point_right: Now look at the "Body" tab and you should see something that looks familiar - a request body similar to the one you specified in Exercise 06 when you [created a new workflow instance](../06/readme.md#5-create-a-new-workflow-instance-via-the-api):
 
