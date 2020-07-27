@@ -10,6 +10,8 @@ After completing these steps you'll understand the general flow of development, 
 
 :point_right: Get back to your "App Studio Workflow Dev Space" by means of the same-named bookmark that you created in a previous exercise.
 
+> If you're just presented with a blank screen, this may be a sign that your Dev Space is in a STOPPED state. Remove the hashpath off the end of the URL (it will look something similar to this: `#ws-g86m2`) to get to your Dev Space overview where you can restart it.
+
 Previously, you created a project by dragging a directory into the Explorer space. This time, you'll use command line tools in the App Space's terminal facility.
 
 :point_right: Open up a terminal using menu path "Terminal -> New Terminal". You should be presented with a command line prompt, most likely showing the current location to be the `projects/` directory.
