@@ -97,7 +97,7 @@ GET /v1/workflow-definitions
 
 :point_right: Use the "Try out" link to expand and explore the API call. You can leave all the parameters as they are, and use the "Execute" button to make the API call.
 
-An API call is made for you, with your credentials, in the context of the environment that you defined. The results are shown, including the HTTP status code, the body of the response, and the response headers:
+An API call is made for you, with the credentials that you specified in the context of the environment that you defined. The results are shown, including the HTTP status code, the body of the response, and the response headers:
 
 ![403 error response](errorresponse.png)
 
@@ -122,19 +122,19 @@ Updating a service instance can be done from the command line, using the `cf` co
 
 While we know that the name of the instance we want to update is `default_workflow`, it's good practice to double check.
 
-:point_right: List the instances with `cf s`; you should see some output that looks like this (vertically truncated for readability):
+:point_right: List the instances with `cf s`; you should see some output that looks like this:
 
 ```
-name                                service             plan
-BPMServicesFLP_html5_repo_runtime   html5-apps-repo     app-runtime
-default_business-rules              business-rules      lite
-default_connectivity                connectivity        lite
-default_portal                      portal              standard
-default_processvisibility           processvisibility   lite
-default_workflow                    workflow            lite
-test-destination                    destination         lite
-test-xsuaa                          xsuaa               application
-uaa_bpmservices                     xsuaa               application
+name                                service             plan          bound apps                         last operation     broker                                                               upgrade available
+BPMServicesFLP_html5_repo_runtime   html5-apps-repo     app-runtime   BPMServicesFLP_appRouter           create succeeded   sm-html5-apps-repo-sb-ebcb2b69-24a5-408e-be00-02066b302b78
+default_business-rules              business-rules      lite          BPMFLP, BPMServicesFLP_appRouter   create succeeded   sm-businessrules-e73ec4d2-a715-4849-a5e9-77b521e7a086
+default_connectivity                connectivity        lite          my-dest-test                       create succeeded   sm-connectivity-a2f61383-be52-41a8-9cf0-f106e165151d
+default_portal                      portal              standard      BPMFLP, BPMServicesFLP_appRouter   create succeeded   sm-portal-fbae912e-4046-4304-90ad-b6d8ed1fa3be
+default_processvisibility           processvisibility   lite          BPMFLP, BPMServicesFLP_appRouter   create succeeded   sm-processvisibility-dc3a0f83-9a80-4358-9c3e-f078de9f236e
+default_workflow                    workflow            lite          BPMFLP, BPMServicesFLP_appRouter   update succeeded   sm-workflow-broker-d2b48385-f83e-4601-9830-0db967aaa2f5
+test-destination                    destination         lite          my-dest-test                       create succeeded   sm-destination-service-broker-40606adc-731d-484b-b585-feb9c1ec3fbb
+test-xsuaa                          xsuaa               application   my-dest-test                       create succeeded   sm-xsuaa-9ef36350-f975-4194-a399-54db361e79b5
+uaa_bpmservices                     xsuaa               application   BPMFLP, BPMServicesFLP_appRouter   create succeeded   sm-xsuaa-9ef36350-f975-4194-a399-54db361e79b5
 ```
 
 There it is, `default_workflow`, an instance of the `workflow` service using the `lite` plan.
@@ -171,7 +171,7 @@ In the terminal in your App Studio, use this to specify these two scopes for the
 cf update-service default_workflow -c '{"authorities": ["WORKFLOW_DEFINITION_GET", "WORKFLOW_INSTANCE_START"]}'
 ```
 
-> The value supplied with the `-c` command option is in JSON format, make sure you use the right combination of quotes and brackets. Happily, as we're all using a Linux based Bash shell there are no variations to worry about here!
+> The value supplied with the `-c` command option is in JSON format, make sure you use the right combination of quotes and brackets. Happily, as we're all using a Linux based Bash shell courtesy of the App Studio, there are no variations to worry about here!
 
 This update should complete with a simple "OK" message.
 
