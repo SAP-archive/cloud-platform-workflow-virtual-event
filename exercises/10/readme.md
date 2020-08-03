@@ -12,7 +12,7 @@ In the [last step of the previous exercise](../09#5-try-the-form-out) you entere
 
 :point_right: In your Fiori launchpad site, open the "Monitor Workflows - Workflow Instances" app and find the most recent instance (you may have to readjust the filter to show instances in "Completed" status).
 
-:point_right: Look at the Workflow Context of this instance, and check for the comments you entered when processing the task. You should see something like this (in this example, the comment _"My decision is based upon the current stock level"_ was entered):
+:point_right: Look at the Workflow Context of this instance, and check for the comments you entered when processing the task. You should see something like this:
 
 ![comments in workflow context](commentsincontext.png)
 
