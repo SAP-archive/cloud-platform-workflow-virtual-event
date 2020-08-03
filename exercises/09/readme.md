@@ -54,7 +54,7 @@ Even though you've only configured the minimum, you can still see the raw result
 
 > If you opt for the terminal-based approach, you can use the power of the Unix shell and combine commands, such that the `cf deploy` will run automatically, but only if the `mbt build` completes successfully: `mbt build && cf deploy mta_archives/OrderFlow_0.0.1.mtar`. See [Conditional execution](https://en.wikipedia.org/wiki/Bash_(Unix_shell)#Conditional_execution) if you want to learn more.
 
-:point_right: Now create a new instance using the Collection Runner in Postman, as you have [done before in Exercise 08](../08#4-create-a-new-instance-of-the-workflow-definition).
+:point_right: Now create a new instance using Postman, as you have [done before in Exercise 08](../08#4-create-a-new-instance-of-the-workflow-definition).
 
 :point_right: Switch to your Fiori launchpad site, and you should now see that there is a task waiting for you in the My Inbox app:
 
