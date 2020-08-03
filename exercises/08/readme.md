@@ -115,7 +115,7 @@ Use "cf dmol -i f9c57a48-cc06-11ea-a023-eeee0a846b5b" to download the logs of th
 
 Now we have the Service Task in the workflow definition, let's try it out.
 
-:point_right: Switch back over to Postman and send another "Creat new workflow instance" request (with the blue "Send" button). This should result in another successful 201 status code, showing the details of the freshly minted workflow instance.
+:point_right: Switch back over to Postman and send another "Create new workflow instance" request (with the blue "Send" button). This should result in another successful 201 status code, showing the details of the freshly minted workflow instance.
 
 :point_right: Now start the "Monitor Workflows - Workflow Instances" app in your Fiori launchpad site, ensuring that the filter is set to show instances in "Completed" status. Find the instance that's just been created, and examine the Workflow Context, which should look something like this:
 
