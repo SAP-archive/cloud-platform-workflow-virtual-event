@@ -6,7 +6,7 @@ In this exercise you'll go back to the workflow definition you created in a prev
 
 After completing these steps you'll have a workflow definition with a service task configured, and have deployed and tested it.
 
-### 1. Open up the workflow definition in the SAP Web IDE Full-Stack
+### 1. Open up the workflow definition in the IDE
 
 :point_right: Open up your App Studio Workflow Dev Space via the bookmark you saved in a previous exercise.
 
