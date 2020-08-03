@@ -119,7 +119,7 @@ At this point you're presented with a simple form designer, which will allow you
 :point_right: Ensure everything is saved, and follow the same "build/deploy" flow as before to get these changes and additions to the workflow definition into your instance of the Workflow service.
 
 
-### 5. Try the form out
+### 5. Try the Form out
 
 It's time to try out the form that you've just created.
 
