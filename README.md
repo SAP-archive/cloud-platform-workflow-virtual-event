@@ -1,5 +1,7 @@
 # Virtual Event - SAP Cloud Platform Workflow
 
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-platform-workflow-virtual-event)](https://api.reuse.software/info/github.com/SAP-samples/cloud-platform-workflow-virtual-event)
+
 ## Description
 
 This repository contains the material for the virtual event on SAP Cloud Platform Workflow. It is based upon the original [CodeJam - SAP Cloud Platform Workflow](https://github.com/SAP-samples/cloud-workflow-codejam/) content.
