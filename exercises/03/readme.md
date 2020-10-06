@@ -152,7 +152,7 @@ At this point, your SAP Cloud Connector, running in a container on your machine,
 
 Now that the connection is established, you can define access to the on-prem backend SAP system that the SAP Cloud Connector will facilitate.
 
-> Remember that (a) the secure tunnel is established *outbound* from the SAP Cloud Connector to the SAP Cloud Platform, not the other way round (i.e. connections cannot be initiated from outside your on-prem landscape) and (b) no on-prem system is accessible unless you specify that it is (a "whitelist" approach).
+> Remember that (a) the secure tunnel is established *outbound* from the SAP Cloud Connector to the SAP Cloud Platform, not the other way round (i.e. connections cannot be initiated from outside your on-prem landscape) and (b) no on-prem system is accessible unless you specify that it is (an "allowlist" approach).
 
 :point_right: Select the "Cloud To On-Premise" item in the navigation menu on the left hand side, and in the "Mapping Virtual To Internal System" section, create a new system mapping entry with the "+" icon. In the dialog that follows, you can specify the details of your backend SAP system, i.e. the ES5 system:
 
