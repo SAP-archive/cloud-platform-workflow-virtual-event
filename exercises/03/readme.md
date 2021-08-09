@@ -18,6 +18,8 @@ After completing these steps you'll have an SAP Cloud Connector system running i
 
 Instructions for setting up an SAP Cloud Connector, along with the software upon which it relies, all in a Docker container, is explained in detail in the [nzamani/sap-cloud-connector-docker](https://github.com/nzamani/sap-cloud-connector-docker) repository on GitHub. This repository is accompanied by the blog post "[Installing SAP Cloud Connector into Docker and connecting it to SAP Cloud Platform](https://blogs.sap.com/2018/05/22/installing-sap-cloud-connector-into-docker-and-connecting-it-to-sap-cloud-platform/)" by [Nabi Zamani](https://people.sap.com/pars.man#overview).
 
+> When following these instructions, [please be aware](https://github.com/nzamani/sap-cloud-connector-docker/blob/a1a673af37b4cc4412b11a6542fb5c9fd26760ad/Dockerfile#L31-L33) of how the mechanism works in relation to the End User License Agreement.
+
 :point_right: Follow the [instructions](https://github.com/nzamani/sap-cloud-connector-docker#instructions) in this repository to set things up; at the end you should have a Docker container based SAP Cloud Connector up and running, and you should have successfully logged in (at https://localhost:8443) as user "Administrator".
 
 Once you've done that, return here for the following steps in this README.
