@@ -43,4 +43,5 @@ CMD /opt/sapjvm_8/bin/java \
 	-Dosgi.usesLimit=30 \
 	-Djava.awt.headless=true \
 	-Dio.netty.recycler.maxCapacity.default=256 \
+	-Djdk.tls.server.protocols=TLSv1.2 \
 	-jar plugins/org.eclipse.equinox.launcher_1.1.0.v20100507.jar
